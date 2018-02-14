@@ -1,0 +1,500 @@
+3.6.7         - Fix: Occasional error on first time opening song-list
+              - Fix: Screen co-ordinates sometimes go mad when secondary monitor is unplugged during live projection
+              - Add: Web support for attempting to maximise/minimise projection window. (Imagine there's Powerpoint behind it)
+              - Add: Viewer - support for the max/minimise requests. (Android to follow)
+              - Fix: Viewer UI refresh, fixing spacing issues and inconsistencies with checkboxes.
+              - Fix: Viewer issue with list containing single song. (Fix was in SB Main)    
+3.6.6         - Fix: oc30.dll crashes on touchscreen machines. Not my fault.
+              -      I've had to disable printing of CCLI report and songlists.
+              -      But CCLI no longer accept printed reports anyway.
+              - Add: By mistake, I replaced the colour pickers with nicer ones,
+              -      which I thought would help the above, but it didn't!
+3.6.4         - Add: Songbase and Viewer set to run as admim
+              - Fix: Faulty enabling on Viewer config page (1.10) 
+              - Fix: Better spacing in Viewer non-interactive mode
+              - Add: Click on first line links in Viewer.
+3.6.3         - Try: Another try at preventing deadlocks. 
+3.6.2         - Fix: New methods for preventing deadlocks.
+              - Add: Viewer (1.9) now allows multiple configurations.
+3.6.1         - Fix: Strange deadlock when no list is selected, Single Screen.
+              - Fix: Android search/choose ignored when SB is Single Screen.
+              - Add: Viewer (1.8) font settings for first-line text
+              - Add: New icon for Viewer!
+              - Fix: Position problem on first-line list.
+              - Fix: Empty line on remote viewers when no list selected.
+3.6           - Add: New interface for network server IP/port.
+              - Add: Network settings restored on startup.
+              - Add: Viewer (1.7) guesses first useful lines of each page.
+              - Add: Viewer handles songs not on original list better.
+              - Add: Songbase can now auto-update from web.
+              - Add: Viewer auto-updates from Songbase server.
+              - Add: Detection of mismatching vresions (From 3.6/1.7 onwards)
+              - Add: Support for network-pull of pages not being displayed
+              - Add: Android now support page preview before projection.
+3.5.7 (Wes)   - Fix: Change size of about box!
+              - Add: Support for remote search
+3.5.6 (Wes)   - Add: Serve network pages dynamically; avoid disk cache delays.
+3.5.4 (Wes)   - Add: Better presentation of title(alt_title) in Viewer.
+3.5.3 (Wes)   - Fix: Poll interval for Viewer not saved
+              - Add: Connection Lost detection in Viewer.
+              - Add: Backspace clears main screen from Viewer.
+              - Fix: Possible incorrect page on song change in Viewer.
+              - Add: Cursor keys do useful things in Viewer.
+3.5.2 (Wes)   - Fix: Startup viewer page sometimes wrong. 
+              - Fix: Viewer control issues when main app is single-screened. 
+              - Add: Font controls for Viewer
+3.5.1 (Wes)   - Fix: Range-check errors on blank screen/exit. 
+              - Fix: Performance issue on main app controlled by viewer.
+3.5.0 (Wes)   - Interactive viewer first release
+3.4.2 (Wes)   - Fix dodgy colours of text fields when editing
+3.4.1 (Wes)   - Fixed faulty handling of upper-case (eg .JPG) images
+3.4.0 (Wes)   - Src resurrected. Fixed preview window size in INI file ignored.
+3.3.0 (Wes)   - Various search fixes, and a logging race-condition lockup...
+3.2.0 (Rich)  - STABLE release (3.1.42b)
+
+--------------------------
+VERSION pre3 v1.42
+--------------------------
+
+Rich  - Fixed bug causing vertical offsets to be only applied in preview mode.
+      - Font-configuration is now back in the normal 'Settings' panel
+      - Offset settings screen reworked so it's a lot more user-friendly.
+      - CCLI/Copyright markers are now correct position and size
+      - When 'Project Scaled' is selected, both main text and CCLI/Copyright markers are correctly scaled with it.
+      - Changes in which monitor is projecting and their resolution are handled automatically.
+      - Edit Window now takes into account the available text area
+      - Edit Window preview now previews at the correct output resolution.
+      - Added 'As Projected' option to the Edit 'Screen' options
+      - Individual Page Background Images are now selected with the Image Picker
+
+--------------------------
+VERSION pre3 v1.41
+--------------------------
+
+Rich  - You can now force a global colour again (other options are forced, but not when editing - click 'View' to see it in its final form.
+      - Added a settings widget for controlling shadow offset
+      - Switching to another catalogue whilst projecting no longer causes a crash - keys are disabled until another song is selected.
+      - Changing settings ensures a full-redraw of all resources on the next 'Project Page' 
+
+--------------------------
+VERSION pre3 v1.40
+--------------------------
+
+Rich  - Fixed an issue with Import whereby the last song could be skipped
+      - Background colour fixed on edit
+      - Preview window contents on loading of another catalogue fixed
+      - Selection changes in the editor could accidently force the font size of its contents 
+
+--------------------------
+VERSION pre3 v1.39
+--------------------------
+
+Rich  - Fixed an issue with Import which caused problems with new songs
+      - Editing/Viewing a page now reselects the correct page
+
+--------------------------
+VERSION pre3 v1.38
+--------------------------
+
+Rich  - Individual page background image code fixed.
+      - You can now either have a 'Default' global image (for where there isn't already a per-page image), or 'Force' it for all pages.
+      - Import and Export operations are now seperated, and work consistantly when merging (no multimedia links yet though)
+      - Fixed a bug connected with the OHP file missing some files.
+      - Left/Right keys when viewing pages whilst editing now changes page again
+
+--------------------------
+VERSION pre3 v1.37
+--------------------------
+
+Rich  - Completed Multilanguage support in the UI
+      - First version using 'Windowless RTF' control for display
+      - Added initial Shadow Text support
+      - Pressing Backspace again after using it to blank the screen restores the last page shown
+      - F2/F3 in Dual Window mode no longer appear on projector window
+      - Single Window mode now allows cursor keys/RETURN to select next song
+      - The Dual-Projection window is now selectable
+
+
+--------------------------
+VERSION pre3 v1.36
+--------------------------
+
+Rich  - Reworked other Settings options for larger settings panel
+      - Background Image selector now has a 'preview' image.
+      - Fixed and improved Projection-mode searches
+      - Projection-mode Title Search now has 'what did I type?' highlighting and delete (oooooo....)
+      - Projection-mode Text Search now tells you how many results it found
+      - Initial work to enable translation of the user-interface into other languages
+
+--------------------------
+VERSION pre3 v1.35
+--------------------------
+
+Wes  - Added Export CCLI file in CSV format. (On file menu).
+     - As a result, had to reformat much of Settings panel.
+
+--------------------------
+VERSION pre3 v1.34
+--------------------------
+
+Rich - More fixes to the 'page cache' when adding new songs and editing old ones
+     - Edits to the 'More Info' window now actually really do get automatically saved!
+     - Delete and New song options are now re-enabled.
+
+--------------------------
+VERSION pre3 v1.33
+--------------------------
+
+Rich - Temp Directory code from v1.31 given a good re-look at and hopefully made more stable.
+
+--------------------------
+VERSION pre3 v1.32
+--------------------------
+
+Rich - Preview and Live windows are now no longer minimize/maximizable, and preview window can't be closed - this was found to be confusing to some users!
+     - Fixed a bug (from v1.30) that was preventing creation of new song lists. 
+     - The 'Song list' list is now sorted with the most recent items first.
+     - Song list allows up/down and return/space keyboard navigation of lists.
+     - Some code tidy up
+
+--------------------------
+VERSION pre3 v1.31
+--------------------------
+
+Rich - Temp directory for song edits is now configurable
+     - Temporary files are now always properly removed as they are no longer needed
+     - Improved 'clean-up' 
+
+--------------------------
+VERSION pre3 v1.30
+--------------------------
+
+Rich - Almost complete 'from the ground up' rewrite of the file-driven backend to have much less reliance on 'temp' files (to improve stability and speed)
+     - RTF song lyrics are now taken directly from the OHP/ZIP file, straight into the RTF control (in memory).
+     - Implemented a 'Page Cache' to store a lot more data in memory, resulting in generally improved 'read' performance
+     - Behaviour of Left/Right/Up/Down and the Preview window's 'NEXT' and 'PREV' buttons are improved.
+     - Import/Export largely rewritten to reduce risks of corruption and to simplify the interface into a more 'do it already' style.
+     - Added error handling to most file manipulation routines.
+     - Expanded the API to the Zip DLL to permit multiple files to be added in a single 'transaction' (improve fault tolerance)
+     - OHP/Sheet Music/Transparency/Photocopy flags are now re-enabled and updated on projection.
+
+--------------------------
+VERSION pre3 v1.29
+--------------------------
+
+Rich - Enter/Space now trigger projection of the current song.
+     - Left/Right change the page in the preview screen not on the live screen
+     - Up/Down changes the current item in the songlist (or the current song, if there's no songlist)
+
+--------------------------
+VERSION pre3 v1.28
+--------------------------
+
+Rich - On a song with 'normal' page shortcuts, inserting or removing pages now retains numerical ordering.
+     - Forward/Back page buttons are more consistant in their 'hidden' status.
+
+--------------------------
+VERSION pre3 v1.27
+--------------------------
+
+Rich - Fixed a bug occuring when the '.hst' files are missing
+     - Rebuilding the Fast-Search index now works
+
+--------------------------
+VERSION pre3 v1.26
+--------------------------
+
+Rich - Song list now contains (alternative titles) as well as primary title for each song
+     - Increased consistancy in selection of songs
+     - 'Project and Next' system for Preview Window
+     - Previous/Next page/song buttons on Preview Window
+     - Blank Screen button on Preview Window
+     - Page buttons expanded slightly for easy-clicking
+     - Loading new catalogues also re-loads the orders for that song
+     - Search Results remain consistant, even if you remove a song from the catalogue
+     - Support for 'Powerpoint' keys - PgUp/PgDown and 'B' added
+     - CCLI number is now not shown, unless set
+     - Some improvements to 'cues' in Single-Monitor mode
+     - Temporary Measure: Logging added to try and track down the weird lockup bug reported in v1.25
+     - Some key-fixes to song editing screen
+
+--------------------------
+VERSION pre3 v1.25
+--------------------------
+
+Rich - Resets preview window when loading an empty catalogue
+     - Initial state of application when Catalogue isn't loaded is now more reliable
+     - Ctrl-F1 is now the 'Help' shortcut, so we don't mask out 'Find Title' in Projection
+     - Manual now nearing completion, now in PDF format
+
+--------------------------
+VERSION pre3 v1.24
+--------------------------
+
+Rich - Key shortcuts added to Edit window.
+     - 'Live Projection' button changes to 'Blank Screen' once running
+     - When editing Song Details whilst projecting, we now no longer pass keypresses onto projection window.
+     - Further work on the new Songburst Manual
+
+--------------------------
+VERSION pre3 v1.23
+--------------------------
+
+Rich - Bugfixed an occasional crash on program exit in the 'stay off the live screen' code.
+
+--------------------------
+VERSION pre3 v1.22
+--------------------------
+
+Rich - Improved scaling support (removed 'restart Songburst' message)
+     - Added code to prevent the main, preview/live and other windows from encroaching on the projection window.
+     - Lots of 'under the hood' fixes to improve stability and speed.
+     - Added "I'm doing stuff" alert for fast search window.
+     - All references to 'Projection Orders' removed, term 'Songlist' now standardised throughout Songburst.
+     - Changed icon on the 'Enter Songlist' button (although still not 100% happy with it!)
+     - 'Projection Window' button is now only a button when it's enabled.
+     - Pre 3.1 'To Do' list completed, further versions before release will be 'bug fixes' only.
+
+--------------------------
+VERSION pre3 v1.20/1
+--------------------------
+
+Rich - Simultaneous Edit and Project
+     - Fixing bugs relating to simultaneous reads/writes
+     - Bugs fixed by adding and deleting pages
+     - First version of support for scaling words formatted for one display onto a different resolution projection screen.
+     - Improved quality of preview and live displays (halftoning - yay!)
+
+--------------------------
+VERSION pre3 v1.19
+--------------------------
+
+Rich - Complete reworking of the render loop (yowzer!)
+          - We now use a set of offscreen and on screen images to pre-render editbox content
+          - This eliminates almost all flicker between pages.
+          - And means we only re-render the text when it changes.
+     - "Live Preview" is now scaled straight from the current output
+          - Uses a 'smooth' scaler, which looks nicer.
+          - 'Smooth' scaler not currently available on Preview Window  
+     - Added the 'Multi Search' button, allowing users to enter a whole songlist at once
+     - 'Transparent' background window removed.
+     - Edit screen now edits and tests at 'live' resolution
+     - 'Reload' and 'Save' buttons are now disabled in the Edit view if there are no outstanding edits.
+     - Fixed a bug which was causing I/O errors if Songburst was run from a file-system root.
+     - The 'temp' directory is always created if it doesn't exist.
+           - Failure to create it will now NOT permit Songburst to run any further.
+     - 'Delete' key on orders will delete the selected song.
+     - Numerous other fixes to some slightly more esoteric bugs/redraw issues.
+
+--------------------------
+VERSION pre3 v1.18
+--------------------------
+
+Rich - Bug-fixes to mean that 'flicker' and lag between pages now reduced to virtually nothing!
+          - Temp files extracted are kept for the entire session, rather than unzipping every time
+          - Numerous fixes and bits of work to ensure that edited files are reloaded correctly
+          - We no longer first clear the Rich-Text screen before displaying a new one
+     - Fixed a bug whereby a clicking on the projector window could make songwords disappear!
+     - Numerous other fixes to greatly improve support for simultaneous editing and projection.
+
+--------------------------
+VERSION pre3 v1.17
+--------------------------
+
+Rich - Another silly mistake, was maxing out the CPU with buffering WM_PAINT messages, doh!
+
+--------------------------
+VERSION pre3 v1.16
+--------------------------
+
+Rich - A bit more 'anti-flicker' work
+     - Fixed a bug relating to 'Backspace' clearing of screen
+     - Got the 'Live Projection' button to work in a consistant manner with it.
+
+--------------------------
+VERSION pre3 v1.15
+--------------------------
+
+Rich - Some work on reducing flicker/time lag between pages - worth a try!
+
+--------------------------
+VERSION pre3 v1.14
+--------------------------
+
+Rich - Reworked configuration screen for fonts, Copyright/CCLI text position and 'Safe Areas'
+     - Changes here now affect positioning of CCLI/Copyright text
+     - Fixed a bug related to button ids disappearing almost at random.
+     - Font and position changes are now saved in options
+
+--------------------------
+VERSION pre3 v1.12/3
+--------------------------
+
+Rich - Improved focus handing in multi-monitor mode.
+     - Added numerous other keys for Song/Page navigation
+     - First version of new Configuration screen for fonts, including 'Copyright' and 'CCLI' display
+     - A slight 'Project this page' speed increase
+
+Wes  - Added 'CCLI Number' display
+
+--------------------------
+VERSION pre3 v1.11
+--------------------------
+
+Rich - Added F5 for 'Project Current Preview'
+     - Tightened up the configuration settings for multimonitor mode (trying to prevent random windows appearing on the Project screen)
+     - Added the 'HTML Help' window (currently just some of the key-shortcuts...)
+     - 'Advanced' search options are always reset to 'Any' when they're not visible
+
+--------------------------
+VERSION pre3 v1.10
+--------------------------
+
+Wes  - Added CCLI License No. to Global Settings-General, INI file, and Projection.
+
+--------------------------
+VERSION pre3 v1.9
+--------------------------
+
+Rich - Bug fix release:
+     - You can now actually edit and enter new song details!
+     - Tabbing order of most windows now correct
+
+--------------------------
+VERSION pre3 v1.8
+--------------------------
+
+Rich - Mostly Multi-monitor mode fixes:
+     - We can now handle the 'projection' monitor being a different resolution to the primary
+     - Preview windows now scale text correctly re:currently visible second monitor
+     - Preview windows display (for 3 seconds) the new preview window size, could be useful!
+     - Closing the main Songburst window while projecting now also brings up the 'Are you sure' box.
+
+--------------------------
+VERSION pre3 v1.7
+--------------------------
+
+Rich - Edit and Project now re-disabled again, as there are still a couple of problems getting them to co-exist
+     - More multimonitor work
+     - Mouse Cursor disabled on projection window
+     - 'User Hints' disabled on projection window, only copyright details are now displayed.
+     - Buttons on Live window now work
+     - Slightly improved keyboard navigation, Currently as Songburst 2 'compatibility' keymap.
+     - Both copyright strings are now shown for a song.
+     - Live window title bar shows current projector state
+     - More debugging and trying to ensure that control flow is always consistent.
+     - Closing the Live window also closes the Projection window
+     - Added a 'Confirmation dialogue' (with default 'NO') to avoid projection exit being performed accidentally.
+
+--------------------------
+VERSION pre3 v1.5/6
+--------------------------
+
+Rich - Allows Edit and Project windows to be simultaneously displayed on seperate monitors.
+     - Main window now has 'compact' view for normal usage which omits Copyright/Usage info.
+     - Moved Usage information back into main window.
+     - Earlier/Later and Remove now work in the same (configurable) way in regard to shortcuts, shortcuts will either 'track' the song they are associated with or remain in the same place in the order.
+     - 'Disabled' state of buttons updated so that if you can't click it, it's grey!
+     - Added 'Status Bar' and updated hints on main window buttons to correspond.
+     - Added 'Preview/Live Window' opening button.
+
+--------------------------
+VERSION pre3 v1.4
+--------------------------
+
+Rich - Slightly changed the icon colours for a more 'version 3' feel!
+     - Adjusted primary interface design to 1024x768 proportions
+     - More work on 'Import/Export' (we now actually attempt to identify changed/new songs rather than asking the user to remember them)
+     - Multi-monitor support (KNOWN BUG: can't handle Editing on one monitor, at the same time as Display on the other)
+     - Orders support now extended and 'previous orders' accessible via drop-down
+     - 'Live' window echos the current visible screen
+     - Added control buttons to the 'live window'.
+
+--------------------------
+VERSION pre3 v1.3
+--------------------------
+
+Rich - The 'Orders' area has been reorganised to improve navigation
+     - 'Add to Order' button automatically creates a new order if one doesn't already exist.
+     - Free Text Search now returns and highlights the line on which the text was found
+     - Free Text Search takes you straight to the first page which the line was found on.
+     - First attempt at the 'page numbers' area... comments requested, especially on key-navigation
+     - The 'More Info' window now follows the main one.
+
+--------------------------
+VERSION pre3 v1.2
+--------------------------
+
+Rich - Much more functionality added to Preview Window, now handles multiple pages and Edit Words/Project buttons.
+     - Further GUI work - 'Save Changes' button now works and is integrated with Preview.
+     - New 'disabled' icons on the "Edit Page Backgrounds" buttons in the editor.
+     - Stability work...
+     - Support added for the 'LIVE' window for Dual-Screen operation (not hooked in yet though...)
+     - NOTE: Bug spotted: if you have two pages with the same individual background image, the second one will get ignored.
+
+--------------------------
+VERSION pre3 v1.0/1
+--------------------------
+
+Rich - First version of new GUI layout added for Version 3,
+     - Added 'preview window' - currently only triggers the first page of each song on main window song selection
+
+    
+================================================================================
+
+-- Version 2.0.45 --
+
+Rich - Fixed a couple of occasional bugs related to key navigation and background display.
+     - Even if 'Background Colour' is selected, we don't display it in 'Edit' mode if we're supressing an image.
+
+-- Version 2.0.44 --
+
+Rich - Remove a 'black blob' from image background.
+
+-- Version 2.0.43 --
+
+Rich - Fixed another (XP only - it seems) 'range check' bug when using a pre-2.0.40 catalogue with 'seperate background images'.
+     - 'Edit' mode now disables background images (use 'Test' to see it with background), as background mode makes editing text difficult.
+     - Background window is hidden when not displaying an image, resulting in a minor speed improvement!
+     - Settings window is now also saved when it is closed, not just when Songburst is quit.
+
+-- Version 2.0.42 --
+
+Wes - Fixed a bug when editing new song text.
+                 
+-- Version 2.0.41 --
+
+Wes - Pressing enter when live projection shows 'Select' returns to most recently displayed song.
+
+-- Version 2.0.40 --
+
+Wes - Can now have separate background image for each page of each song.
+    - Two new buttons on tool panel for add/remove songs.
+    - And the tool panel is now floating.
+    - Check: When both background colour and image override selected, it chooses image.
+    - When on background colour override, text antialiases correctly.
+
+-- Version 2.0.39 --
+
+Rich - Quick fix displaying the right thing for when background colour and image flags are both set.
+
+-- Version 2.0.38 --
+
+Wes  - Fix directory for changes text file
+     - Remove green test colour from background
+     - Remove unnecessary image loads
+     - Remove projection transparency when not necessary.
+
+-- Version 2.0.37 --
+
+Wes  - Revamp background image support. (Faster, includes editing mode, and accepts JPEGs)
+Rich - Added Changes viewer to About Page
+
+-- Version 2.0.36 --
+
+Rich - Title and Free Text searches in 'Projection' mode include alternate titles.
+
+-- Version 2.0.35 --
+
+Rich - Added 'Vertical Offset' setting and 'configurator' for it.
+     - Added 'Show First Page' option for songs with only a single page.

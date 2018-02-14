@@ -1,0 +1,419 @@
+<?xml version="1.0" standalone="no"?>
+<strings lang="en_gb">
+
+<messages>
+	<item id="Message">Message from %s</item>
+	<item id="CatCheck"  >Please Wait... checking catalogue</item>
+	<item id="CatCorrect">Please Wait... correcting catalogue</item>
+	<item id="CatExport">Please Wait... building song list</item>
+	<item id="CheckSure">Are You Sure?</item>
+	<item id="CheckSave">Unsaved Data on this page. Save it?</item>
+	<item id="CheckDelete">Are you sure you want to delete this file from the archive?</item>
+	<item id="CheckReset">This will reset ALL song usage data. Are you sure?</item>
+	<item id="CheckDumpAuto">This will forget all data used for auto-completion. Are you sure?</item>
+	<item id="QuickSearch">%s is about to massively accelerate the search process, but it may take a while!! (Only need to do it once)</item>
+	<item id="StopProject" name="Stop Projecting?">Are you sure you want to stop projecting?</item>
+	<item id="BackgroundFilter">Images|*.bmp;*.jpg;</item>
+	<item id="BackgroundErr">Background Image "%s" could not be loaded</item>
+	<item id="Cancel" name="_Cancel" />
+	<item id="OK" name="_OK" />
+
+	<item id="Tempo" name="Tempo">
+		<item id="0">Any</item>
+		<item id="1">Flexible</item>
+		<item id="2">Fastest</item>
+		<item id="3">Medium/Fast</item>
+		<item id="4">Medium</item>
+		<item id="5">Slow/Medium</item>
+		<item id="6">Slow</item>
+	</item>
+	<item id="Capo" name="Guitarist Capo">
+		<item id="0">Any</item>
+		<item id="1">None</item>
+	</item>
+	<item id="Key" name="Preferred Key">
+		<item id="0">Any</item>
+		<item id="1">C</item>
+		<item id="2">C# / Db</item>
+		<item id="3">D</item>
+		<item id="4">D# / Eb</item>
+		<item id="5">E</item>
+		<item id="6">F</item>
+		<item id="7">F# / Gb</item>
+		<item id="8">G</item>
+		<item id="9">G# / Ab</item>
+		<item id="10">A</item>
+		<item id="11">A# / Bb</item>
+		<item id="12">B</item>
+
+		<item id="mode0">Any</item>
+		<item id="mode1">Major</item>
+		<item id="mode2">Minor</item>
+	</item>
+</messages>
+
+<main>
+	<menu id="Database" name="_Database">
+		<item id="0" name="_New" />
+		<item id="1" name="_Open" />
+		<item id="2" name="Save _As" />
+		<item id="3" name="_Import" />
+		<item id="4" name="_Export" />
+		<item id="5" name="Export _CCLI as CSV" />
+		<item id="6" name="E_xit" />
+	</menu>
+	<menu id="Song" name="_Song">
+		<item id="0" name="_Add New Song" />
+		<item id="1" name="_Save Changes" />
+		<item id="2" name="_Delete This Song" />
+		<item id="3" name="_Title Search">Search by Song Titles</item>
+		<item id="4" name="_Find">Search by all Song Words</item>
+		<item id="5" name="Entire Song_list">Search for, and add a number of Song Titles to Order</item>
+		<item id="6" name="Ne_xt Song" />
+		<item id="7" name="Pre_vious Song" />
+	</menu>
+	<menu id="Tools" name="_Tools">
+		<item id="0" name="_Reset usage" />
+		<item id="1" name="_Auto Completion" />
+		<item id="2" name="_Build History" />
+		<item id="3" name="_Clear History" />
+		<item id="4" name="Show all _songs" />
+		<item id="5" name="Build _Fast-Search" />
+	</menu>
+	<menu id="Settings" name="S_ettings">
+		<item id="0" name="_Global" />
+	</menu>
+	<menu id="Help" name="_Help">
+		<item id="0" name="Check for _Updates" />
+		<item id="1" name="_About" />
+		<item id="2" name="_Help" />
+	</menu>
+
+	<songinfo name="Song Information">
+		<item id="Title" name="First Line" />
+		<item id="AltTitle" name="Alternative Title" />
+		<item id="Author" name="Author/s" />
+		<item id="CopyHolder" name="Copyright Holder" />
+		<item id="CopyDate" name="Copyright Date" />
+		<item id="CCLI" name="CCLI Song No." />
+		<item id="MoreInfo" name="More _Info">Click to show publishing, media and musical details</item>
+		<item id="Add" name="_Add to Songlist">Click to add to the currently selected Songlist</item>
+		<item id="Edit" name="_Edit Song">Allows you to edit the details of this song.</item>
+		<item id="Save" name="_Save Changes" />
+		<item id="Used" name="Used for:" />
+		<item id="UsedVid"   name="Video projection">If this song has been used for Video Projection</item>
+		<item id="UsedTrans" name="Printed transparency">If this song has been printed onto transparency film</item>
+		<item id="UsedRec"   name="Recorded">If this song has been recorded here</item>
+		<item id="UsedSheet" name="Printed songsheet">If this song has been printed as sheet music.</item>
+		<item id="Enable">Click "Edit Song" button to make changes to these song details"</item>
+		<item id="Expand">Click to reveal more details about this song</item>
+		<item id="Shrink">Click to hide some details about this song</item>
+		<item id="Unsaved">Unsaved</item>
+	</songinfo>
+
+	<songlist name="Current Songlist">
+		<item id="Drop">Click to show previous orders</item>
+		<item id="New" name="_New">Create a new songlist for projection</item>
+		<item id="NewBox">Click "New" or select a previous songlist</item>
+		<item id="Earlier" name="_Earlier">Move current song earlier in the current songlist</item>
+		<item id="Remove" name="Remo_ve">Click to remove current song from this songlist</item>
+		<item id="Later" name="Late_r">Move current song later in the current songlist</item>
+		<item id="Key" name="Keyboard short-cut">The keyboard key which will trigger projection of this song when projecting</item>
+		<item id="Live" name="_Live Projection">Project all the songs in the current songlist</item>
+		<item id="Blank" name="B_lank Screen">Blank the Projection screen</item>
+		<item id="Save" name="Save _Copy">Click to duplicate this songlist</item>
+		<item id="Remove" name="Re_move">Click to delete this entire songlist.</item>
+		<item id="Print" name="_Print">Click to print this songlist.</item>
+	</songlist>
+
+	<item id="FindTitle">Search by Song Titles</item>
+	<item id="Search">Search by all Song Words</item>
+	<item id="Songlist">Enter an entire songlist at once, searching by song titles</item>
+	<item id="DualScreen">Dual-screen enabled</item>
+	<item id="KeyShift" name="Shift" />
+	<item id="KeyCtrl"  name="Ctrl"  />
+	<item id="KeyAlt"   name="Alt"   />
+	<item id="Title">%s - %s</item>
+	<item id="Welcome">Welcome to %s (%s)</item>
+</main>
+
+<edit>
+	<item id="Title">Click 'View' to save _ view this page with background image</item>
+	<item id="View" name="_View">Preview this page</item>
+	<item id="Reload" name="_Reload">Reload last saved version</item>
+	<item id="Save">Save (Ctrl-S)</item>
+	<item id="Print">Print (Ctrl-P)</item>
+	<item id="Undo">Undo (Ctrl-Z)</item>
+	<item id="Cut">Cut (Ctrl-X)</item>
+	<item id="Copy">Copy (Ctrl-C)</item>
+	<item id="Paste">Paste (Ctrl-V)</item>
+	<item id="Bold">Bold (Ctrl-B)</item>
+	<item id="Italic">Italic (Ctrl-I)</item>
+	<item id="Underline">Underline (Ctrl-U)</item>
+	<item id="Left">Left Justify</item>
+	<item id="Centre">Centre Justify</item>
+	<item id="Right">Right Justify</item>
+	<item id="Prev">Previous Page</item>
+	<item id="Next">Next Page</item>
+	<item id="New">Blank Page After (Ctrl-N)</item>
+	<item id="Delete">Delete Page (Ctrl-Del)</item>
+	<item id="Exit" name="E_xit">Exit</item>
+	<sizes>
+    	<item>As Projected</item> 
+		<item>Full Screen</item>
+		<item>640x480</item>
+		<item>800x600</item>
+		<item>1024x768</item>
+		<item>1152x864</item>
+		<item>1280x1024</item>
+	</sizes>
+	<item id="Background">Choose background image</item>
+	<item id="DeleteErr">Sorry! All songs must have at least one page</item>
+	<item id="DeleteChk">Delete this page? Please confirm</item>
+	<item id="UnsavedChk">You will lose changes made to this page - ok?</item>
+	<item id="Key" name="Key" />
+	<item id="Pages" name="Pages" />
+</edit>
+
+<setoffsets>
+	<item id="Top"   >Top of Screen:</item>
+	<item id="Left"  >Left of Screen:</item>
+	<item id="Right" >Right of Screen:</item>
+	<item id="Bottom">Bottom of Screen:</item>
+	<item id="CCLI">CCLI TEXT</item>
+	<item id="MAIN">MAIN TEXT</item>
+	<item id="COPY">COPYRIGHT&#10;TEXT</item>
+	<item id="Close"  name="Close" />
+	<item id="Done"	  name="Done"  />
+	<item id="Cancel" name="Cancel" />
+
+	<dialogs>
+		<item id="CCLI">CCLI Font</item>
+		<item id="Copy">Copyright Font</item>
+		<item id="Main">Main Font</item>
+	</dialogs>
+
+	<buttons>
+		<item id="Move">Move</item>
+		<item id="Change">Change</item>
+		<item id="AsMain">Like Main Text</item>
+		<item id="AsCCLI">Like CCLI Text</item>
+		<item id="AsCopy">Like Copyright</item>
+	</buttons>
+</setoffsets>
+
+<settings name="Global Settings">
+	<tab id="General" name="General">
+		<item id="FirstPageEvery">Automatically view first page for every song</item>
+		<item id="FirstPageSingle">Automatically view first page of songs with only one page</item>
+		<item id="PPKeys">Make 'B' key blank screen, like Powerpoint</item>
+		<item id="ProjectNext">On 'Project Page' select next page</item>
+		<item id="SongsMove">Key shortcuts stay with songs when moved in orders</item>
+		<item id="RetainAspect">Retain aspect ratio when resizing Preview Windows</item>
+		<item id="TickOHPUsed">Tick OHP used box when songs are displayed</item>
+        <item id="Projecting">Projecting</item>
+        <item id="SongLists">Song Lists</item>
+		<item id="F2F3WinSearch">F2/F3 uses normal search windows in dual-screen mode</item>
+	</tab>
+
+	<tab id="Appearance" name="Appearance">
+		<item id="Primary">Primary Font:</item>
+		<item id="Copyright">Copyright Font:</item>
+		<item id="CCLI">CCLI Font:</item>
+		<item id="Offsets">Screen Offsets:</item>
+		<item id="Change" name="Change" />
+        <item id="Fonts" bold="Bold" nobold="Not Bold"
+        				 italic="Italic" noitalic="Not Italic"
+                         coloured="Coloured" default="&lt;Default Font&gt;" />
+		<item id="BGColour">Default Background Colour</item>
+		<item id="BGImage">Default Background Image</item>
+        <item id="ForceBGImage">Force Background Image</item>
+        <item id="Shadow">Shadow Text</item>
+		<item id="BGWin">Select Background Image</item>
+		<item id="Scale">Scale projection as if screen is:</item>
+		<item id="ScaleFull" name="Full Screen" />
+		<item id="AutoLoad">Automatically Load Most Recent Database on Startup</item>
+		<item id="TempFile">Put Temporary Files in:</item>
+		<item id="TempWin">Select Temporary Directory</item>
+        <item id="Files">Files</item>
+	</tab>
+
+	<tab id="Network" name="Networking">
+		<item id="Send">Send messages to %s Servants running on</item>
+	</tab>
+
+    <tab id="CCLI" name="CCLI">
+    	<item id="Rep">Representative's Details</item>
+    	<item id="RepTitle">Title</item>
+    	<item id="RepFore">Forename</item>
+    	<item id="RepSur">Surname</item>
+        <item id="RepAddr">Address</item>
+        <item id="RepTown">Town</item>
+        <item id="RepPost">Postcode</item>
+        <item id="RepCountry">Country</item>
+        <item id="RepDayTel">Daytime Tel</item>
+        <item id="RepEveTel">Evening Tel</item>
+        <item id="Expiry">Expiry Date</item>
+        <item id="Ref">Customer Ref.</item>
+        <item id="CCLILicence">CCLI Licence</item>
+        <item id="MRLicence">MR Licence</item>
+        <item id="Org">Organisation</item>
+        <item id="Addr">Address</item>
+        <item id="Town">Town</item>
+        <item id="Post">Postcode</item>
+        <item id="Country">Country</item>
+        <item id="DayTel">Daytime Tel</item>
+        <item id="EveTel">Evening Tel</item>
+        <item id="Fax">Fax</item>
+        <item id="Email">Email</item>
+        <item id="Website">Website</item>
+        <item id="Required">Underlined items are all required for CCLI report generation</item>
+    </tab>
+
+</settings>
+
+<preview>
+	<livemodes>
+		<item id="Select">Select</item>
+        <item id="SearchResultCount">Search Results (%d)</item>
+        <item id="SearchResultIndex">Search Result (%d/%d)</item>
+        <item id="SearchResultNone">Select (No Results)</item>
+        <item id="Shortcut">Shortcut=%s</item>
+		<item id="SearchWords">Search Text</item>
+		<item id="SearchTitle">Find Title</item>
+		<item id="Exit">Exit (Y/N)</item>
+	</livemodes>
+	<previewmodes>
+		<item id="Select">Select</item>
+		<item id="Song">Showing song</item>
+		<item id="SearchWords">Search within Song Words</item>
+		<item id="SearchTitle">Search for Title</item>
+		<item id="Searching">Search Results</item>
+		<item id="Exit">Quit?</item>
+        <item id="Blank">&lt;blank&gt;</item>
+	</previewmodes>
+	<item id="EditPage" name="E_dit Page">Click here to enter/edit words for the current song</item>
+	<item id="ProjectPage" name="_Project Page">Click here to project the previewed page</item>
+	<item id="Prev">Select the previous page/song</item>
+	<item id="Next">Select the next page/song</item>
+	<item id="PreviewTitle">Preview Window</item>
+	<item id="Pages" name="Pages" />
+	<item id="LiveTitle">LIVE - %s</item>
+</preview>
+
+<search name="%s - Find Song">
+	<item id="Text">Text to search for:</item>
+	<item id="OHP">Include OHP Text in search</item>
+	<item id="SearchButton" name="_Search" />
+	<item id="Simple" name="&lt;&lt; Simple" />
+	<item id="Advanced" name="Advanced &gt;&gt;" />
+	<item id="SearchStart">Searching for "%s"</item>
+    <item id="SearchResult">Searching for "%s" (%s Results...)</item>
+	<item id="SearchComplete">Search Complete for "%s" (%s Results...)</item>
+</search>
+
+<titlesearch name="Quick Title Search">More than 10 songs</titlesearch>
+
+<printselect name="Print Select">
+	<item id="ReportType"  name="Report Type">
+    	<item id="0">Song Report</item>
+		<item id="1">Photocopying Report</item>
+    </item>
+	<item id="Include"     name="Include songs with these boxes ticked:" />
+	<item id="VidProj"     name="Video-Proj used" />
+	<item id="PrintOHP"    name="Printed OHP used" />
+	<item id="PrintSheet"  name="Printed Sheet" />
+	<item id="Recorded"    name="Recorded" />
+	<item id="Photocopied" name="Photocopied" />
+	<item id="AllSongs"    name="All Songs" />
+	<item id="Preview"     name="Preview Table before printing" />
+</printselect>
+
+<export>
+	<item id="TitleChoose" name="Choose songs to export" />
+	<item id="TitleFile"   name="Choose file to export to" />
+	<item id="ColTitle"    name="Title"  />
+	<item id="Cancel"	   name="Cancel" />
+	<item id="Multimedia"  name="Include multimedia links" />
+	<item id="Import"      name="Import" />
+	<item id="Export"      name="Export" />
+</export>
+
+<import name="Import Songs">
+	<item id="ColTitle"    name="Title"  />
+	<item id="ColStatus"   name="Status" />
+	<item id="ColEdited"   name="Edited" />
+	<item id="Cancel"	   name="Cancel" />
+	<item id="Multimedia"  name="Include multimedia links" />
+	<item id="Import"      name="Import" />
+	<item id="Export"      name="Export" />
+    <item id="States"      same="Same" new="New" newer="Newer" older="Older" />
+</import>
+
+<about name="About %s">
+	<item id="CopyRight">Freeware, but _copy;2016 Wes Hinsley&#10;and Richard Barber</item>
+	<item id="Copy">Please send your bug reports and comments to</item>
+	<item id="Updates">Check for new updates at</item>
+</about>
+
+<reportpreview name="Report Preview" />
+
+<printlist name="Print Songlist">
+	<item id="Title" name="Title" />
+	<item id="SubTitle" name="Sub-Title" />
+	<item id="ShortCut" name="Include short-cut keys" />
+	<item id="IncludeKeys" name="Include keys" />
+	<item id="IncludeCapo" name="Include Guitar Capo Key" />
+	<item id="Print" name="_Print" />
+</printlist>
+
+<printohp name="OHP Page Print">
+    <item id="ThisPage" name="Just This Page" />
+	<item id="AllPage"  name="All Pages" />
+	<item id="Print" name="_Print" />
+</printohp>
+
+<multimedia name="Locate Multimedia Link">
+    <item id="Location"    name="Location" />
+	<item id="Locate"      name="_Locate File" />
+	<item id="Description" name="Description" />
+	<item id="Describe"    name="Edit Link Description" />
+</multimedia>
+
+<moreinfo name="Further Song Information">
+	<item id="Photocopied">Music photocopied from the following source</item>
+	<item id="MusicBook">Title of Music Book</item>
+	<item id="ISBN">10-digit ISBN No.&#10;(or publisher)</item>
+	<item id="Tune">Tune Name (if known)</item>
+	<item id="Composer">Composer/Arranger&#10;(if different from author)</item>
+	<item id="MusicOther">Music and Other Information</item>
+	<item id="Key"   name="Preferred Key" />
+	<item id="Capo"  name="Guitarist Capo" />
+	<item id="Tempo" name="Tempo" />
+	<item id="Copy1" name="Copyright Line 1" />
+	<item id="Copy2" name="Copyright Line 2" />
+	<item id="Notes" name="Other Notes" />
+	<item id="Auto">Auto</item>
+
+	<item id="Multimedia" name="Multimedia Links" />
+	<item id="AddLink" name="_Add Link" />
+	<item id="Show" name="_Show" />
+	<item id="Extract" name="_Extract" />
+	<item id="Rename" name="_Rename" />
+	<item id="Delete" name="_Delete" />
+</moreinfo>
+
+<help name="%s - Help">
+	<item id="Contents" name="Contents" />
+	<item id="Back" name="Back" />
+	<item id="Forward" name="Forward" />
+	<item id="Close" name="Close" />
+</help>
+
+<fonts name="Font Configuration">
+	<item id="Force" name="Force this setting" />
+	<item id="Size"  name="Font Size" />
+	<item id="Text"  name="Text Colour" />
+</fonts>
+
+</strings>

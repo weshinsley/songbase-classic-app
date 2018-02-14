@@ -1,0 +1,26 @@
+Known Issues
+============
+
+Multilanguage support in UI doesn't support non-ASCII charsets.
+Text Search sometimes gets out of step with current contents.
+
+Crash if a new catalogue is loaded whilst projecting then we try to control the old catalogue window using key controls
+
+
+The Wishlist
+============
+
+Soon
+----
+'Offsets/Positioning' of fonts should be performed on the 'Live' screen.
+Seperate out Font selections and their positioning routines.
+Export/Import individual song files and song lists
+"Remote Control" (via internet)
+
+Later
+-----
+Unicode support (both in UI and in Lyrics)
+Search by Usage, Key, Tempo
+Generate Printed reports from search results
+Video/Powerpoint animated slide backgrounds
+Remote updates, 'Web Catalogue' support.
