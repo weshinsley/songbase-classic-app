@@ -314,12 +314,11 @@ end;
 
 procedure TFWebServer.syncRequestPart();
 var s : string;
-    i,remember : integer;
+    i : integer;
     dummy : boolean;
-
 begin
-  dummy:=false;
   s:=FSongbase.sync_s;
+  dummy:=false;
   if (s='-1') then begin
     if (FLiveWindow.Visible=true) then begin
       FSongbase.ProjectSong( '', 0, true);
@@ -329,18 +328,16 @@ begin
       PageRTF:='';
     end;
   end else begin
-    remember:=-1;
     for i:=0 to length(FPreviewWindow.PageButtons)-1 do begin
       if (FPreviewWindow.PageButtons[i].Caption=s) then begin
         if (FLiveWindow.Visible) then begin
           FPreviewWindow.BPageButtonClick(FPreviewWindow.PageButtons[i]);
           FPreviewWindow.BProjectSongClick(FPreviewWindow);
+        end else begin
+          FProjWin.SelectPage( FSongbase.EID.Text,i+1, true);
         end;
-        remember:=i+1;
+        break;
       end;
-    end;
-    if (FLiveWindow.Visible=false) then begin
-      FProjWin.SelectPage( FSongbase.EID.Text,remember, true);
     end;
   end;
 end;
