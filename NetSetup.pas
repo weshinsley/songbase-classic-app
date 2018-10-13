@@ -13,7 +13,7 @@ type
     URL : string;
     test_row : integer;
   public
-    procedure Execute; override;
+    procedure Execute; override;        
   end;
 
   TFNetSetup = class(TForm)
@@ -163,11 +163,11 @@ begin
   SGSCreens.ColWidths[3]:=trunc((SGScreens.Width-212)/3);
   SGScreens.FixedRows:=1;
   SGScreens.FixedCols:=0;
+  SGScreens.RowCount:=2;
   SGScreens.Cells[0,0]:='Server URL';
   SGScreens.Cells[1,0]:='Port';
   SGScreens.Cells[2,0]:='Use';
   SGScreens.Cells[3,0]:='Test';
-  SGScreens.RowCount:=2;
   BAddScreen.Enabled:=true;
   BRemoveScreen.Enabled:=false;
   BTestScreens.Enabled:=false;
@@ -240,7 +240,9 @@ var sel_top,sel_bottom : integer;
 begin
   sel_top:=SGScreens.Selection.Top;
   sel_bottom:=SGSCreens.Selection.Bottom;
-  if (sel_top>0) and (sel_bottom<SGScreens.RowCount) then begin
+
+  // Selection index starts from 1...
+  if (sel_top>0) and (sel_bottom<=CheckList.Count) then begin
     BRemoveScreen.Enabled:=true;
     BTestScreens.Enabled:=true;
   end else begin
@@ -249,19 +251,13 @@ begin
   end;
 end;
 
-procedure DeleteRow(Grid: TStringGrid; ARow: Integer);
-var
-  i: Integer;
-begin
-  for i := ARow to Grid.RowCount - 2 do
-    Grid.Rows[i].Assign(Grid.Rows[i + 1]);
-  Grid.RowCount := Grid.RowCount - 1;
-end;
 
 procedure TFNetSetup.BRemoveScreenClick(Sender: TObject);
 var sel_top, sel_bottom : integer;
     s1,s2 : string;
-    i : integer;
+    i,j : integer;
+Const
+   NoSelection : TGridRect = (Left:-1; Top:-1; Right:-1; Bottom:-1 );
 begin
   if (messageDlg('Confirm, delete screen?',mtConfirmation,[mbYes,mbCancel],0)=mrYes) then begin
     sel_top:=SGScreens.Selection.Top;
@@ -270,9 +266,14 @@ begin
     str(sel_bottom,s2);
     for i:=sel_bottom downto sel_top do begin
       CheckList.Delete(i-1);
-      DeleteRow(SGScreens,i);
+      for j := 0 to SGScreens.ColCount do SGScreens.Cells[j, i]:='';
+      for j := i to SGScreens.RowCount - 2 do
+        SGScreens.Rows[j].Assign(SGScreens.Rows[j + 1]);
     end;
   end;
+  SGScreens.RowCount := max(2, 1 + CheckList.Count);
+  SGScreens.Selection:=NoSelection;
+  SGScreensClick(Sender);
   sBFiles.saveParams(SBMain.INIFile);
 end;
 
@@ -280,6 +281,8 @@ procedure TFNetSetup.BAddScreenClick(Sender: TObject);
 var i : integer;
     found : boolean;
     ps : string;
+Const
+   NoSelection : TGridRect = (Left:-1; Top:-1; Right:-1; Bottom:-1 );
 begin
   FAddScreen.ShowModal;
   found:=false;
@@ -291,13 +294,16 @@ begin
     end;
     if (not found) then begin
       CheckList.Add('N');
-      SGScreens.RowCount:=SGScreens.RowCount+1;
+      SGScreens.RowCount:=1+CheckList.Count;
       SGScreens.Cells[0,CheckList.Count]:=FAddScreen.server;
       str(FAddScreen.port,ps);
       SGScreens.Cells[1,CheckList.Count]:=ps;
       sBFiles.saveParams(SBMain.INIFile);
+      SGScreens.Selection:=NoSelection;
+      SGScreensClick(Sender);
     end;
   end;
+  SGScreens.Repaint;
 end;
 
 procedure TFNetSetup.BTestScreensClick(Sender: TObject);

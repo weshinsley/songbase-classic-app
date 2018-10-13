@@ -654,6 +654,8 @@ begin
       else if sName = 'Net_Port'           then FNetSetup.port:=sValue
       else if SName = 'Net_Enable'         then FNetSetup.enabled:=(sValue='1')
 
+      // Screens that we'll push network requests to...
+
       else if sName = 'Screens_Server'    then begin
         s_svr := trim(copy(svalue,0,pos(',',svalue)-1));
         svalue:=copy(svalue,pos(',',svalue)+1,length(svalue));
@@ -661,10 +663,10 @@ begin
         svalue:=copy(svalue,pos(',',svalue)+1,length(svalue));
         s_use := trim(svalue);
         FNetSetup.CheckList.Add(s_use);
-        FNetSetup.SGScreens.RowCount:=2+FNetSetup.CheckList.Count;
+        FNetSetup.SGScreens.RowCount:=1+FNetSetup.CheckList.Count;
         FNetSetup.SGSCreens.Cells[0,FNetSetup.CheckList.Count]:=s_svr;
         FNetSetup.SGSCreens.Cells[1,FNetSetup.CheckList.Count]:=s_port;
- end
+      end
       //----- LEGACY OPTIONS ------
       else if sName = 'Global OffsetL'     then val(sValue,FSongbase.rTextArea.Left,Code)
       else if (sName = 'Global OffsetT') or (sName = 'Global VOffset') then

@@ -1,6 +1,6 @@
 object FWebServer: TFWebServer
-  Left = 393
-  Top = 144
+  Left = 1241
+  Top = 796
   Width = 459
   Height = 221
   Caption = 'FWebServer'

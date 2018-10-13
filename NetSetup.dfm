@@ -1,6 +1,6 @@
 object FNetSetup: TFNetSetup
-  Left = 1316
-  Top = 110
+  Left = 1410
+  Top = 206
   Width = 416
   Height = 479
   Caption = 'Network Services'
@@ -107,13 +107,12 @@ object FNetSetup: TFNetSetup
     TabOrder = 3
     object SGScreens: TStringGrid
       Left = 24
-      Top = 25
+      Top = 24
       Width = 321
-      Height = 152
-      ColCount = 3
+      Height = 153
+      ColCount = 4
       FixedCols = 0
       RowCount = 2
-      FixedRows = 0
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect]
       TabOrder = 0
       OnClick = SGScreensClick
@@ -122,6 +121,7 @@ object FNetSetup: TFNetSetup
       ColWidths = (
         258
         250
+        64
         64)
     end
     object BAddScreen: TButton
