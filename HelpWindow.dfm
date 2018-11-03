@@ -1,6 +1,6 @@
 object FHelpWindow: TFHelpWindow
-  Left = 27
-  Top = 516
+  Left = 1076
+  Top = 334
   Width = 353
   Height = 355
   HorzScrollBar.Visible = False
@@ -17,8 +17,8 @@ object FHelpWindow: TFHelpWindow
   OnResize = FormResize
   OnShow = FormShow
   DesignSize = (
-    345
-    328)
+    337
+    317)
   PixelsPerInch = 96
   TextHeight = 13
   object Panel2: TPanel

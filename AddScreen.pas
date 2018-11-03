@@ -7,10 +7,6 @@ uses
   Dialogs, StdCtrls, IdHTTP;
 
 type
-  private
-  public
-    procedure Execute; override;
-  end;
   TFAddScreen = class(TForm)
     BOk: TButton;
     BCancel: TButton;

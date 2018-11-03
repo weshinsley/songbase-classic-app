@@ -320,7 +320,7 @@ type
 
   // My version information
 
-const VERSION_INTERNAL = 43;
+const VERSION_INTERNAL = 44;
       VERSION_NAME  = '3.7.0';
       VERSION_DATE = '03/11/2018';
 
