@@ -148,7 +148,6 @@ type
     procedure EAuthorKeyUp(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure CountRecs;
-    procedure Print1Click(Sender: TObject);
     procedure RecreateHistory1Click(Sender: TObject);
     procedure Find1Click(Sender: TObject);
     procedure SaveAs1Click(Sender: TObject);
@@ -322,8 +321,8 @@ type
   // My version information
 
 const VERSION_INTERNAL = 43;
-      VERSION_NAME  = '3.6.7';
-      VERSION_DATE = '13/11/2016';
+      VERSION_NAME  = '3.7.0';
+      VERSION_DATE = '03/11/2018';
 
   // The minimum version of Viewer that I *can* work with:-
 
@@ -332,8 +331,8 @@ const VERSION_INTERNAL = 43;
 
   // The version of the Viewer I was packaged with:-
 
-      VIEWER_LATEST = 21;
-      VIEWER_NAME_LATEST = '1.11';
+      VIEWER_LATEST = 22;
+      VIEWER_NAME_LATEST = '1.12';
 
   // The minimum version of Android Controller that I *can* work with:-
 
@@ -1823,163 +1822,6 @@ begin
       EAuthor.Sellength:=length(S);
     end;
   end;
-end;
-
-procedure TFSongbase.Print1Click(Sender: TObject);
-var TF : textfile;
-    RowNo : integer;
-    S : string;
-    SR : SongRecord;
-    Yes : boolean;
-    CR,LF : char;
-    CurrentRec : integer;
-begin
- { CR:=chr(13); LF:=chr(10);
-  checkfilesave;
-  CurrentRec:=SBRecNo.Position;
-  FPrintSelect.Top:=FSongbase.Top+10;
-  FPrintSelect.Left:=FSongbase.Left+10;
-  FPrintSelect.ShowModal;
-  if FPrintSelect.Result then begin
-    RowNo:=0;
-    FPreview.top:=Screen.Height+150;
-    FPreview.left:=Screen.Width+150;
-    FPreview.ReSizeMe:=false;
-    FPreview.visible:=true;
-
-    if FPrintSelect.PCBReport.ItemIndex=1 then begin
-      FPreview.F1Book1.ColText[1]:='PUBLICATION COPIED'+CR+LF+'(Please specify editiong)';
-      FPreview.F1Book1.ColText[2]:='10-DIGIT'+CR+LF+'ISBN NUMBER'+CR+LF+'(or publisher)';
-      FPreview.F1Book1.ColText[3]:='SONG TITLE'+CR+LF+'OR'+CR+LF+'FIRST LINE';
-      FPreview.F1Book1.ColText[4]:='AUTHOR(S)';
-      FPreview.F1Book1.ColText[5]:='TUNE NAME'+CR+LF+'(if known)';
-      FPreview.F1Book1.ColText[6]:='COMPOSER/'+CR+LF+'ARRANGER'+CR+LF+'(if different'+CR+LF+'from author)';
-      FPreview.F1Book1.ColText[7]:='WORDS #';
-      FPreview.F1Book1.ColText[8]:='MUSIC #';
-      FPreview.F1Book1.ColText[9]:='BOOK #';
-      FPreview.F1Book1.HdrHeight:=1024;
-      FPreview.F1Book1.SetColWidth(1,1,5632,false);
-      FPreview.F1Book1.SetColWidth(2,4,3840,false);
-      FPreview.F1Book1.SetColWidth(5,6,3000,false);
-      FPreview.F1Book1.SetColWidth(7,9,2304,false);
-      FPreview.F1Book1.MaxCol:=9;
-      FPreview.ActualWidth:=5632+(3*3840)+(2*3000)+(3*2304)+1500;
-    end else begin
-       FPreview.F1Book1.ColText[1]:='SONG #';
-       FPreview.F1Book1.ColText[2]:='PROJ';
-       FPreview.F1Book1.ColText[3]:='PRINT';
-       FPreview.F1Book1.ColText[4]:='REC';
-       FPreview.F1Book1.ColText[5]:='SONG FIRST LINE AND/OR TITLE';
-       FPreview.F1Book1.ColText[6]:='AUTHOR & COPYRIGHT';
-       FPreview.F1Book1.HdrHeight:=512;
-       FPreview.F1Book1.SetColWidth(1,1,2700,false);
-       FPreview.F1Book1.SetColWidth(2,4,1792,false);
-       FPreview.F1Book1.SetColWidth(5,5,9960,false);
-       FPreview.F1Book1.SetColWidth(6,6,12240,false);
-       FPreview.ActualWidth:=2700+(3*1792)+9960+12240+1500;
-       FPreview.F1Book1.MaxCol:=6;
-
-    end;
-    if OpenForRead(TF,FileName) then begin
-      while not eof(TF) do begin
-        readln(TF,S);
-        DeLimit(S,SR);
-        yes:=(FPrintSelect.PCAll.Checked);
-        yes:=yes or (FPrintSelect.PCTrans.Checked and (SR.Trans='1'));
-        yes:=yes or (FPrintSelect.PCOHP.Checked and (SR.OHP='1'));
-        yes:=yes or (FPrintSelect.PCPrint.Checked and (SR.Sheet='1'));
-        yes:=yes or (FPrintSelect.PCRec.Checked and (SR.Rec='1'));
-        yes:=yes or ((FPrintSelect.PCBReport.ItemIndex=1) and (SR.Photo='1'));
-        if yes then begin
-          inc(RowNo);
-          if FPrintSelect.PCBReport.ItemIndex=0 then begin
-            FPreview.F1Book1.TextRC[RowNo,1]:=SR.OfficeNo;
-            FPreview.F1Book1.TextRC[RowNo,2]:='';
-            FPreview.F1Book1.TextRC[RowNo,3]:='';
-            FPreview.F1Book1.TextRC[RowNo,4]:='';
-            if SR.OHP='1' then FPreview.F1Book1.TextRC[RowNo,2]:='X';
-            if SR.Sheet='1' then FPreview.F1Book1.TextRC[RowNo,3]:='X';
-            if SR.Rec='1' then FPreview.F1Book1.TextRC[RowNo,4]:='X';
-            FPreview.F1Book1.TextRC[RowNo,5]:=SR.Title;
-            FPreview.F1Book1.TextRC[RowNo,6]:=SR.Author+' © '+SR.CopDate+' '+SR.CopyRight;
-            FPreview.F1Book1.MaxRow:=RowNo;
-          end else begin
-            FPreview.F1Book1.TextRC[RowNo,1]:=SR.MusBook;
-            FPreview.F1Book1.TextRC[RowNo,2]:=SR.ISBN;
-            FPreview.F1Book1.TextRC[RowNo,3]:=SR.Title;
-            FPreview.F1Book1.TextRC[RowNo,4]:=SR.Author;
-            FPreview.F1Book1.TextRC[RowNo,5]:=SR.Tune;
-            FPreview.F1Book1.TextRC[RowNo,6]:=SR.Arr;
-            FPreview.F1Book1.TextRC[RowNo,7]:=' ';
-            FPreview.F1Book1.TextRC[RowNo,8]:=' ';
-            FPreview.F1Book1.TextRC[RowNo,9]:=' ';
-            FPreview.F1Book1.MaxRow:=RowNo;
-          end;
-        end;
-      end;
-      FPreview.F1Book1.update;
-      if FPrintSelect.PCBReport.ItemIndex=0 then begin
-        FPreview.F1Book1.SetRowHeightAuto(1,1,RowNo+1,6,true);
-        FPreview.F1Book1.SetSelection(1,1,RowNo+2,4);
-        FPreview.F1Book1.SetAlignment(F1HAlignCenter,true,F1VAlignTop,0);
-        FPreview.F1Book1.SetSelection(1,5,RowNo+2,6);
-        FPreview.F1Book1.SetAlignment(F1HAlignLeft,true,F1VAlignTop,0);
-        FPreview.F1Book1.SetSelection(1,1,RowNo+1,6);
-        FPreview.F1Book1.SetPrintAreaFromSelection;
-        FPreview.F1Book1.PrintColHeading:=true;
-        FPreview.F1Book1.PrintFooter:='&R&08Page &P/&N';
-        FPreview.F1Book1.PrintHeader:='';
-        FPreview.F1Book1.PrintLandScape:=true;
-        FPreview.OkToPrint:=not FPrintSelect.PCBPreview.Checked;
-        Unsaved:=false;
-        if FPrintSelect.PCBPreview.Checked then begin
-          FPreview.F1Book1.SetSelection(1,1,1,1);
-          FPreview.visible:=false;
-          FPreview.ReSizeMe:=true;
-          FPreview.ShowModal;
-          FPreview.F1Book1.SetSelection(1,1,RowNo+2,4);
-        end;
-        FPreview.F1Book1.EnableProtection:=false;
-        if FPreview.OkToPrint then FPreview.F1Book1.FilePrint(true);
-      end else begin
-        FPreview.F1Book1.SetRowHeightAuto(1,1,RowNo+1,9,true);
-        FPreview.F1Book1.SetSelection(1,1,RowNo+2,6);
-        FPreview.F1Book1.SetAlignment(F1HAlignLeft,true,F1VAlignTop,0);
-        FPreview.F1Book1.SetSelection(1,1,RowNo+1,1);
-        FPreview.F1Book1.SetBorder(1,1,3,1,1,0,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,2,RowNo+1,2);
-        FPreview.F1Book1.SetBorder(1,3,1,1,1,0,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,3,RowNo+1,3);
-        FPreview.F1Book1.SetBorder(1,1,3,1,1,0,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,4,RowNo+1,4);
-        FPreview.F1Book1.SetBorder(1,3,1,1,1,0,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,5,RowNo+1,5);
-        FPreview.F1Book1.SetBorder(1,1,3,1,1,0,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,6,RowNo+1,6);
-        FPreview.F1Book1.SetBorder(1,3,1,1,1,0,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,7,RowNo+1,9);
-        FPreview.F1Book1.SetBorder(5,3,3,3,3,1,0,0,0,0,0);
-        FPreview.F1Book1.SetSelection(1,1,RowNo+1,9);
-        FPreview.F1Book1.SetPrintAreaFromSelection;
-        FPreview.F1Book1.PrintColHeading:=true;
-        FPreview.F1Book1.PrintFooter:='&R&08Page &P/&N';
-        FPreview.F1Book1.PrintHeader:='';
-        FPreview.F1Book1.PrintLandScape:=true;
-        FPreview.OkToPrint:=not FPrintSelect.PCBPreview.Checked;
-        if FPrintSelect.PCBPreview.Checked then begin
-          FPreview.F1Book1.SetSelection(1,1,1,1);
-          FPreview.visible:=false;
-          FPreview.ReSizeMe:=true;
-          FPreview.ShowModal;
-          FPreview.F1Book1.SetSelection(1,1,RowNo+2,6);
-        end;
-        if FPreview.OkToPrint then FPreview.F1Book1.FilePrint(true);
-      end;
-      CloseTextfile(TF,FileName);
-    end;
-  end;
-  loadrec(currentrec,false);
-  Ready;   }
 end;
 
 procedure TFSongbase.RecreateHistory1Click(Sender: TObject);

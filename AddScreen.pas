@@ -7,7 +7,6 @@ uses
   Dialogs, StdCtrls, IdHTTP;
 
 type
-  TestHttpThread = class(TThread)
   private
   public
     procedure Execute; override;
@@ -15,7 +14,6 @@ type
   TFAddScreen = class(TForm)
     BOk: TButton;
     BCancel: TButton;
-    BTestScreens: TButton;
     LPort: TLabel;
     EPort: TEdit;
     EServer: TEdit;
@@ -41,19 +39,7 @@ uses WebServer;
 
 {$R *.dfm}
 
-procedure TestHttpThread.Execute;
-var Result : string;
-    http : TIdHTTP;
-begin
-  http:=TIdHTTP.Create(FWebServer);
-  try
-//    Result:=http.Post(url,postage);
-  except
-  end;
-//  postage.free;
-  http.free;
 
-end;
 procedure TFAddScreen.BOkClick(Sender: TObject);
 var p : integer;
     code : integer;

@@ -1,3 +1,5 @@
+3.7.0         - Add: Support for pushing words to SB-Screen app.
+              - Fix: Freak bug with single-screen remote-control page issue.
 3.6.7         - Fix: Occasional error on first time opening song-list
               - Fix: Screen co-ordinates sometimes go mad when secondary monitor is unplugged during live projection
               - Add: Web support for attempting to maximise/minimise projection window. (Imagine there's Powerpoint behind it)

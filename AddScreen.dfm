@@ -1,6 +1,6 @@
 object FAddScreen: TFAddScreen
-  Left = 1282
-  Top = 664
+  Left = 1395
+  Top = 712
   Width = 301
   Height = 177
   Caption = 'Add Network Screen'
@@ -29,7 +29,7 @@ object FAddScreen: TFAddScreen
     Caption = 'Host/IP'
   end
   object BOk: TButton
-    Left = 32
+    Left = 80
     Top = 95
     Width = 75
     Height = 25
@@ -38,7 +38,7 @@ object FAddScreen: TFAddScreen
     OnClick = BOkClick
   end
   object BCancel: TButton
-    Left = 112
+    Left = 168
     Top = 95
     Width = 75
     Height = 25
@@ -46,20 +46,12 @@ object FAddScreen: TFAddScreen
     TabOrder = 1
     OnClick = BCancelClick
   end
-  object BTestScreens: TButton
-    Left = 192
-    Top = 96
-    Width = 75
-    Height = 25
-    Caption = 'Test'
-    TabOrder = 2
-  end
   object EPort: TEdit
     Left = 168
     Top = 56
     Width = 81
-    Height = 24
-    TabOrder = 3
+    Height = 21
+    TabOrder = 2
     Text = '8080'
     OnChange = EPortChange
   end
@@ -67,8 +59,8 @@ object FAddScreen: TFAddScreen
     Left = 72
     Top = 24
     Width = 177
-    Height = 24
-    TabOrder = 4
+    Height = 21
+    TabOrder = 3
     Text = '8080'
     OnChange = EServerChange
   end

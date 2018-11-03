@@ -129,7 +129,7 @@ begin
   // This function adds the specified filename to the zip file specified
   // by OHPFile... This is a bit rough, and shouldn't be in this unit.
   // V3!
-
+  FNVStart := nil;
   ZO:=ZpGetOptions;
   ZO.fGrow:=true;
   ZO.fUpdate:=false;
