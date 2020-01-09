@@ -351,7 +351,7 @@
 </import>
 
 <about name="About %s">
-	<item id="CopyRight">Freeware, but _copy;2016 Wes Hinsley&#10;and Richard Barber</item>
+	<item id="CopyRight">Freeware, but _copy;2018 Wes Hinsley&#10;and Richard Barber</item>
 	<item id="Copy">Please send your bug reports and comments to</item>
 	<item id="Updates">Check for new updates at</item>
 </about>

@@ -284,6 +284,8 @@ var i : integer;
 Const
    NoSelection : TGridRect = (Left:-1; Top:-1; Right:-1; Bottom:-1 );
 begin
+  FAddScreen.Left:=FNetSetup.Left+BaddScreen.Left;
+  FAddScreen.Top:=FNetSetup.Top+(BAddScreen.Top);
   FAddScreen.ShowModal;
   found:=false;
   if (FAddScreen.Port<>-1) then begin

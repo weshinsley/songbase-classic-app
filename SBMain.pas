@@ -15,7 +15,7 @@ type
     LTitle: TLabel;
     ETitle : TEdit;
     FileOpen: TOpenDialog;
-    MainMenu1: TMainMenu;
+    MainMenu1: TMainMenu;                  
     Database1: TMenuItem;
     Song1: TMenuItem;
     Tools1: TMenuItem;
@@ -320,9 +320,9 @@ type
 
   // My version information
 
-const VERSION_INTERNAL = 44;
-      VERSION_NAME  = '3.7.0';
-      VERSION_DATE = '03/11/2018';
+const VERSION_INTERNAL = 45;
+      VERSION_NAME  = '3.7.1';
+      VERSION_DATE = '11/11/2018';
 
   // The minimum version of Viewer that I *can* work with:-
 
@@ -331,8 +331,8 @@ const VERSION_INTERNAL = 44;
 
   // The version of the Viewer I was packaged with:-
 
-      VIEWER_LATEST = 22;
-      VIEWER_NAME_LATEST = '1.12';
+      VIEWER_LATEST = 23;
+      VIEWER_NAME_LATEST = '1.13';
 
   // The minimum version of Android Controller that I *can* work with:-
 
