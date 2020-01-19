@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Menus, StdCtrls, ComCtrls, AxCtrls, OleCtrls, vcf1, ComObj, ExtCtrls, SBZipUtils,
-  SBFiles, Buttons, Grids, MultiMon, FileCtrl, SongList, VideoStreamer,
+  SBFiles, Buttons, Grids, MultiMon, FileCtrl, SongList, VideoStreamer, ExtActns,
   IdBaseComponent, IdComponent, IdTCPServer, IdCustomHTTPServer,
   IdHTTPServer, IdTCPConnection, IdTCPClient, IdHTTP, SyncObjs;
 
@@ -317,12 +317,13 @@ type
     { Public declarations }
   end;
 
-
   // My version information
 
-const VERSION_INTERNAL = 45;
-      VERSION_NAME  = '3.7.1';
-      VERSION_DATE = '11/11/2018';
+const VERSION_INTERNAL = 46;
+      VERSION_NAME  = '3.7.2';
+      VERSION_DATE = '09/01/2020';
+
+      // 45 3.7.1
 
   // The minimum version of Viewer that I *can* work with:-
 
@@ -3732,23 +3733,18 @@ begin
   FNetSetup.Left:=20;
   FNetSEtup.Top:=20;
   FNetSetup.ShowModal;
-
 end;
 
-
 procedure TFSongbase.downloadFile(remoteFile, localFile : string);
-var stream : TMemoryStream;
 begin
-  stream:=TMemoryStream.Create;
-  try
+  with TDownloadURL.Create(self) do begin
     try
-      idHttp.get(remoteFile, stream);
-      if fileexists(localFile) then deletefile(localFile);
-      stream.SaveToFile(LocalFile);
+      URL:=remoteFile+'?d='+DateTimeToStr(now);
+      FileName := localFile;
+      ExecuteTarget(nil);
     except
     end;
-  finally
-    stream.free;
+   Free;
   end;
 end;
 
@@ -3758,7 +3754,7 @@ var TF : TextFile;
     first : boolean;
 begin
   first:=true;
-  downloadFile('http://www.teapotrecords.co.uk/bfree/Songbase/sbupdate.php?v='+intToStr(VERSION_INTERNAL),'update.txt');
+  downloadFile('https://www.teapotrecords.co.uk/bfree/Songbase/sbupdate.php?v='+intToStr(VERSION_INTERNAL),'update.txt');
   assignfile(Tf,'update.txt');
   reset(TF);
   readln(TF,S);

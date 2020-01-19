@@ -57,7 +57,7 @@ begin
   if (FileExists('tmp.replace')) then deletefile('tmp.replace');
   with TDownloadURL.Create(self) do begin
     try
-      URL:='http://www.teapotrecords.co.uk/bfree/Songbase/'+strRemoteFileName+'?d='+DateTimeToStr(Now);
+      URL:='https://www.teapotrecords.co.uk/bfree/Songbase/'+strRemoteFileName+'?d='+DateTimeToStr(Now);
       FileName := 'tmp.download';
       OnDownloadProgress := URL_OnDownloadProgress;
       ExecuteTarget(nil);

@@ -987,8 +987,6 @@ begin
   LogThis( 'Global configuration updated succesfully' );
 end;
 
-
-// From http://community.borland.com/article/0,1410,15910,00.html
 procedure FileCopy( Const sourcefilename, targetfilename: String );
 Var
   S, T: TFileStream;

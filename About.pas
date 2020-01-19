@@ -84,7 +84,7 @@ end;
 procedure TFAbout.Label2Click(Sender: TObject);
 begin
   ShellExecute(Handle, 'open',
-    'http://www.teapotrecords.co.uk',nil,nil, SW_SHOWNORMAL);
+    'https://www.teapotrecords.co.uk',nil,nil, SW_SHOWNORMAL);
 end;
 
 procedure TFAbout.Label1Click(Sender: TObject);
