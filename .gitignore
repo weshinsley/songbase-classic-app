@@ -1,4 +1,5 @@
 *.bak
 *.dcu
-*.exe
+Songbase.exe
+Viewer.exe
 *.~*
